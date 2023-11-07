@@ -1,9 +1,10 @@
-# Project
+## General Information
 
 Repository to host the solar academy course on PV fault detection: "Operational research for urban solar development".
-The course is derived from the workshop given at Datasun 2022.
 
-## General Information
+The course is derived from the workshop given at [Datasun 2022](https://github.com/AlexandreHugoMathieu/pvfault_detection/blob/main/notebooks/PV%20Fault%20detection.ipynb).
+
+### Ressources
 
 The repository relies on some functions from pvlib and pvanalytics.
 
