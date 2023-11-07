@@ -4,7 +4,7 @@ Repository to host the solar academy course on PV fault detection: "Operational 
 
 The course is derived from the workshop given at [Datasun 2022](https://github.com/AlexandreHugoMathieu/pvfault_detection/blob/main/notebooks/PV%20Fault%20detection.ipynb).
 
-### Ressources
+### Resources
 
 The repository relies on some functions from pvlib and pvanalytics.
 
