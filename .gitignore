@@ -1,0 +1,27 @@
+# Common credential files
+credentials.json
+
+# Private Files
+.json
+secret.csv
+
+# Byte-compiled  optimized  DLL files
+__pycache__
+.py[cod]
+$py.class
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environments
+.env
+.venv
+env
+venv
+
+# Idea  folder to  ignore (pycharm folder)
+.idea/
+
+# Local readthedocs folder
+build
+
