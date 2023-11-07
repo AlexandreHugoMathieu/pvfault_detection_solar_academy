@@ -11,7 +11,7 @@ The repository relies on some functions from pvlib and pvanalytics.
 - pvlib: https://pvlib-python.readthedocs.io/en/stable/
 - pvanalytics: https://pvanalytics.readthedocs.io/en/stable/
 
-The master has also been inspired from the [PVlib tutorial](https://pvsc-python-tutorials.github.io/PVSC48-Python-Tutorial/Tutorial%200%20-%20Overview.html).
+Some parts have also been inspired from the [PVlib tutorial](https://pvsc-python-tutorials.github.io/PVSC48-Python-Tutorial/Tutorial%200%20-%20Overview.html).
 
 I sincerely thank those developers who offer the possibilities to other researchers to build from the top-edge methods.
 
