@@ -1,0 +1,4 @@
+pandas==1.4.1
+jupyter==1.0.0
+cycler==0.12.1
+matplotlib==3.4.1
