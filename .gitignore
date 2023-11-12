@@ -17,6 +17,7 @@ $py.class
 .env
 .venv
 env
+secret
 venv
 
 # Idea  folder to  ignore (pycharm folder)
