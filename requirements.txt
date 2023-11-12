@@ -7,3 +7,4 @@ tqdm==4.66.1
 pvlib==0.10.2
 ipympl==0.9.3
 notebook==6.5.2
+traitlets==5.9.0

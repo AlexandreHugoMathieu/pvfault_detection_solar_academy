@@ -48,7 +48,7 @@ if __name__ == "__main__":
     min_index = pd.date_range(data.index[0], data.index[-1] + pd.Timedelta(hours=1), freq="1min").tz_convert("UTC")
     solar_pos = get_solarposition(min_index, LAT_ALB, LONG_ALB, ALT_ALB)
     solar_pos_tz = solar_pos.tz_convert("Etc/GMT+7")
-    # Same convention as in the reportHourly averages, reported at the end of the hour hourly average
+    # Same convention as in the report: Hourly averages, reported at the end of the hour hourly average
     solar_pos_H = solar_pos_tz.resample("H", origin='end').mean()
 
     data_xtrain["sun_azimuth"] = solar_pos_H["azimuth"].copy()
