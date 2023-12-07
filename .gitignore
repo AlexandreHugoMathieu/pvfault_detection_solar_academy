@@ -5,6 +5,9 @@ credentials.json
 .json
 secret.csv
 
+# Secret script
+failure_ivmpp_modeling.py
+
 # Byte-compiled  optimized  DLL files
 __pycache__
 .py[cod]
