@@ -88,8 +88,6 @@ def hourly_solarposition(index, lat, long, alt, tz):
     # Same convention as in the report: Hourly averages, reported at the end of the hour hourly average
     solar_pos_H = solar_pos_tz.resample("H", origin='end').mean()
 
-    solar_pos2 = get_solarposition(min_index, 45, 5, alt)
-    solar_pos2 = solar_pos2.resample("H", origin='end').mean().tz_convert("CET")
     return solar_pos_H
 
 
