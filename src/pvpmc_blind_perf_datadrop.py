@@ -8,7 +8,7 @@ from pvlib.solarposition import get_solarposition
 from pvlib.pvsystem import retrieve_sam
 from pvlib.iam import martin_ruiz_diffuse, martin_ruiz
 from pvlib.spectrum import spectral_factor_sapm
-from pvlib.irradiance import aoi
+from pvlib.irradiance import aoi, get_total_irradiance, get_extra_radiation
 from pvlib.atmosphere import get_absolute_airmass, get_relative_airmass
 
 from src.config import DATA_PATH
@@ -130,8 +130,14 @@ if __name__ == "__main__":
 
     # Get IAM and SMM
     aoi_angle = aoi(TILT_S2, AZIMUTH_S2, 90 - data["solar_elevation"], data["solar_azimuth"])
-    data["poa_direct"] = (data["ghi"] * np.cos(aoi_angle * np.pi / 180)).clip(lower=0)
-    data["poa_diffuse"] = (data["gpoa"] - data["poa_direct"]).clip(lower=0)
+    dni_extra = get_extra_radiation(data.index)  # Get DNI at the top of the Atmosphere
+    poa_data_advanced = get_total_irradiance(TILT_S2, AZIMUTH_S2, 90 - data["solar_elevation"],
+                                             data["solar_azimuth"],
+                                             data["dni"], data["ghi"], data["dhi"],
+                                             dni_extra=dni_extra,
+                                             albedo=0.2, model="haydavies")
+    data["poa_direct"] = poa_data_advanced["poa_direct"]
+    data["poa_diffuse"] = poa_data_advanced["poa_diffuse"]
     iam_total, smm = get_iam_smm(aoi_angle, TILT_S2, data["poa_direct"], data["gpoa"], data["solar_elevation"],
                                  retrieve_sam("Sandiamod")['Canadian_Solar_CS6X_300M__2013_'])
 
@@ -139,7 +145,8 @@ if __name__ == "__main__":
     for idx, row in tqdm(data.iterrows(), total=len(data.index)):
         if row["gpoa"] > 0:
             g_poa_effective = (row["gpoa"] * smm.loc[idx] * iam_total.loc[idx]).copy()
-            iv_curve = scale_system_iv_curve_pdc(pv_params, pdc=row["pdc"], g_poa_effective=g_poa_effective,
+            iv_curve = scale_system_iv_curve_pdc(pv_params, pdc=np.maximum(row["pdc"], 0.0000001),
+                                                 g_poa_effective=g_poa_effective,
                                                  temp_cell=row["t_mod"], n_module=12, vmax=12 * 39)
             _, i_dc, v_dc = get_Pmpp(iv_curve, VI_max=True, v_col='v_system', i_col='i_system')
             pdc_model = get_Pmpp(iv_curve) * 12
