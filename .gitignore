@@ -1,9 +1,10 @@
 # Common credential files
 credentials.json
 
-# Private Files
+# Private Files/Folder
 .json
 secret.csv
+solutions/
 
 # Secret script
 failure_ivmpp_modeling.py
