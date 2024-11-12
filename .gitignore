@@ -6,10 +6,11 @@ credentials.json
 secret.csv
 solutions/
 2023/
-src
+src/
 
 # Secret script
 failure_ivmpp_modeling.py
+pv_models.py
 
 # Byte-compiled  optimized  DLL files
 __pycache__
@@ -31,4 +32,5 @@ venv
 
 # Local readthedocs folder
 build
+
 
