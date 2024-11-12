@@ -1,0 +1,2 @@
+Python intro + POA calculation: https://colab.research.google.com/drive/1y9-l7Vf9I7qTfaDfnh4ubo5kybaRqehb?usp=sharing
+Python intro + Shading effect: https://colab.research.google.com/drive/1hB1pmBw-n7RiS99vCHQi2OKicfcQxpcO?usp=sharing

@@ -6,6 +6,7 @@ credentials.json
 secret.csv
 solutions/
 2023/
+src
 
 # Secret script
 failure_ivmpp_modeling.py
