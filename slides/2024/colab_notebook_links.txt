@@ -1,3 +1,4 @@
 1. Python intro + POA calculation: https://colab.research.google.com/drive/1y9-l7Vf9I7qTfaDfnh4ubo5kybaRqehb?usp=sharing
 2. Python intro + Shading effect: https://colab.research.google.com/drive/1hB1pmBw-n7RiS99vCHQi2OKicfcQxpcO?usp=sharing
 3. AC power estimation: https://colab.research.google.com/drive/1ncPYAOFvJvU_Tc5goPQL9F9wLNUh1FzQ?usp=sharing
+4. IV-curve modeling: https://colab.research.google.com/drive/1nADZ1DH7rbXfohQS8HPEDMRc8VrOuh-1?usp=sharing
